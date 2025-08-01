@@ -31,20 +31,35 @@ package CollectionsII
 //    println(union.sorted())
 //}
 
+//fun main(){
+//    val breachedPasswords = setOf("123456", "password", "qwerty", "admin", "letmein")
+//
+//    val userPasswords = mapOf(
+//        "Kim" to "hello123",
+//        "Regina" to "qwerty",
+//        "Derrick" to "securePass1",
+//        "Faith" to "123456",
+//        "Brian" to "welcome2025"
+//    )
+//
+//    for ((i, password) in userPasswords){
+//        if (password in breachedPasswords){
+//            println(i)
+//        }
+//    }
+//}
+
 fun main(){
-    val breachedPasswords = setOf("123456", "password", "qwerty", "admin", "letmein")
+    val rsvpList = setOf("Kim", "Regina", "Derrick", "Faith", "Brian", "Ivy")
+    val actualAttendees = setOf("Kim", "Regina", "Brian", "Zara", "Elvis")
 
-    val userPasswords = mapOf(
-        "Kim" to "hello123",
-        "Regina" to "qwerty",
-        "Derrick" to "securePass1",
-        "Faith" to "123456",
-        "Brian" to "welcome2025"
-    )
+    val attended = rsvpList.intersect(actualAttendees)
+    println("Who attended: ${attended.joinToString()}")
 
-    for ((i, password) in userPasswords){
-        if (password in breachedPasswords){
-            println(i)
-        }
-    }
+    val rsvpButNeverShowedUp = rsvpList.subtract(actualAttendees)
+    println("RSVP but never showed up: ${rsvpButNeverShowedUp.joinToString()}")
+
+    val attendedWithoutRsvp = actualAttendees.subtract(rsvpList)
+    println("Attended without RSVP: ${attendedWithoutRsvp.joinToString()}")
+
 }
