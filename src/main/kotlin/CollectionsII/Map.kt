@@ -30,17 +30,35 @@ package CollectionsII
 //    val averageScore = calculateAverageManually(scores.values)
 //    println(averageScore)
 //}
+//
+//fun main(){
+//    val text = "Kotlin is fun and Kotlin is powerful and fun"
+//
+//    val wordCounts = mutableMapOf<String, Int>()
+//    val words = text.split(" ")
+//    for (i in words){
+//        val toLowercase = i.lowercase()
+//        wordCounts[toLowercase] = wordCounts.getOrDefault(toLowercase,0) + 1
+//    }
+//    for ((i, count) in wordCounts){
+//        println("$i -> $count")
+//    }
+//}
 
 fun main(){
-    val text = "Kotlin is fun and Kotlin is powerful and fun"
-
-    val wordCounts = mutableMapOf<String, Int>()
-    val words = text.split(" ")
-    for (i in words){
-        val toLowercase = i.lowercase()
-        wordCounts[toLowercase] = wordCounts.getOrDefault(toLowercase,0) + 1
+    val grades = listOf(
+        "A", "B", "C", "A", "C", "C"
+    )
+    val gradeCounts = mutableMapOf<String, Int>()
+    for (i in grades){
+        gradeCounts[i] = gradeCounts.getOrDefault(i, 0) + 1
     }
-    for ((i, count) in wordCounts){
-        println("$i -> $count")
+    for ((i, count) in gradeCounts){
+//        println("${i.toSortedSet()} $count")
+        if (count > 1){
+            println("Grade ${i} $count Students")
+        }else{
+            println("Grade ${i} $count Student")
+        }
     }
 }
