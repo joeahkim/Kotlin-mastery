@@ -29,10 +29,28 @@ import kotlin.math.PI
 //}
 
 //group the names by their starting letter
+//fun main(){
+//    val names = listOf("Kim", "Kyle", "Regina", "Faith", "Derrick", "Rose", "Kelvin")
+//    val groupedNames = names
+//        .groupBy { it.first().uppercaseChar() }
+//        .toSortedMap()
+//    println(groupedNames)
+//}
+
+// Group people by city, and print how many live in each.
 fun main(){
-    val names = listOf("Kim", "Kyle", "Regina", "Faith", "Derrick", "Rose", "Kelvin")
-    val groupedNames = names
-        .groupBy { it.first().uppercaseChar() }
+    val people = listOf(
+        "Kim" to "Nairobi",
+        "Regina" to "Kisumu",
+        "Derrick" to "Nairobi",
+        "Faith" to "Mombasa",
+        "Brian" to "Kisumu"
+    )
+    val groupedPeople = people.groupBy { it.second }
+        .mapValues { it.value }
         .toSortedMap()
-    println(groupedNames)
+    for ((x, y) in groupedPeople) {
+        println("$x → ${y.map { it.first }} ${y.size}")
+    }
+
 }
