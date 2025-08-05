@@ -37,4 +37,8 @@ fun main() {
         println("Highest Price item: ${max?.name}")
         println("Lowest price item: ${min?.name}")
     }
+//    Business rules
+    println(products.any{it.stock == 0})
+    println(products.all { it.stock > 0 })
+    println(products.none{ it.name == " " })
 }
