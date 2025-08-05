@@ -28,16 +28,32 @@ package CollectionsII.higherOrderFunctions
 //Check if anyone is from Kisumu
 //Check if all users are from Nairobi
 //Check if none are from Eldoret
-fun main(){
-    val users = listOf(
-        "Kim" to "Nairobi",
-        "Regina" to "Kisumu",
-        "Derrick" to "Nairobi",
-        "Faith" to "Mombasa",
-        "Brian" to "Nairobi"
-    )
+//fun main(){
+//    val users = listOf(
+//        "Kim" to "Nairobi",
+//        "Regina" to "Kisumu",
+//        "Derrick" to "Nairobi",
+//        "Faith" to "Mombasa",
+//        "Brian" to "Nairobi"
+//    )
+//
+//    println(users.any { it.second == "Kisumu" })
+//    println(users.all { it.second == "Nairobi" })
+//    println(users.none { it.second == "Eldoret" })
+//}
 
-    println(users.any { it.second == "Kisumu" })
-    println(users.all { it.second == "Nairobi" })
-    println(users.none { it.second == "Eldoret" })
+//Check if any product is free
+//Check if all products cost more than 100
+//Check if none of the prices are negative
+fun main(){
+    val orders = listOf(
+        "Phone" to 700.0,
+        "Laptop" to 1200.0,
+        "Headphones" to 150.0,
+        "Monitor" to 0.0,
+        "Mouse" to 25.0
+    )
+    println(orders.any { it.second == 0.0 })
+    println(orders.all { it.second > 100.0 })
+    println(orders.none { it.second < 0.0 })
 }
