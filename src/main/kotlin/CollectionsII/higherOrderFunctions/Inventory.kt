@@ -25,4 +25,16 @@ fun main() {
         }
         }
     }
+
+    val lowOnStock = products.filter { it.stock < 5 }
+    println(lowOnStock)
+
+// highest and lowest priced product per category
+    for ((x, y) in groupedByCategory){
+        println(x)
+        val max = y.maxByOrNull { it.price }
+        val min = y.minByOrNull { it.price }
+        println("Highest Price item: ${max?.name}")
+        println("Lowest price item: ${min?.name}")
+    }
 }
