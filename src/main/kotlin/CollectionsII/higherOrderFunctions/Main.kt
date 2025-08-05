@@ -20,10 +20,19 @@ import kotlin.math.PI
 
 //Keep only names starting with the letter "K"
 //Capitalize them all
+//fun main(){
+//    val names = listOf("kim", "regina", "kyle", "faith", "derrick")
+//    val contained = names
+//        .filter { it.startsWith('k') }
+//        .map { it.replaceFirstChar { char -> char.uppercaseChar()} }
+//    println(contained)
+//}
+
+//group the names by their starting letter
 fun main(){
-    val names = listOf("kim", "regina", "kyle", "faith", "derrick")
-    val contained = names
-        .filter { it.startsWith('k') }
-        .map { it.replaceFirstChar { char -> char.uppercaseChar()} }
-    println(contained)
+    val names = listOf("Kim", "Kyle", "Regina", "Faith", "Derrick", "Rose", "Kelvin")
+    val groupedNames = names
+        .groupBy { it.first().uppercaseChar() }
+        .toSortedMap()
+    println(groupedNames)
 }
