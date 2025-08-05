@@ -47,4 +47,16 @@ fun main() {
 //How many products per category
     println(products.size)
     println(products.sumOf { it.stock * it.price })
+
+// user to enter a product name and
+//Check if it exists
+//Show its details
+    println("Enter Product Name:")
+    val userInput = readLine()?.trim()
+    val mappedUSer = products.find { it.name.equals(userInput, ignoreCase = true) }
+    if(mappedUSer != null){
+        println(mappedUSer.name)
+    }else{
+        println("Not found")
+    }
 }
