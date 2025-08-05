@@ -20,7 +20,7 @@ fun main(){
         "Derrick" to 31,
         "Faith" to 17
     )
-    println(users.map { it.second }.any{ it < 18})
-    println(users.map { it.second }.all { it > 18 })
-    println(users.map { it.second }.none { it > 60 })
+    println(users.any { it.second < 18 })
+    println(users.all { it.second > 18 })
+    println(users.any { it.second > 60 })
 }
