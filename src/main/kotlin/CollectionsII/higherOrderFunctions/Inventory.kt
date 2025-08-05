@@ -41,4 +41,10 @@ fun main() {
     println(products.any{it.stock == 0})
     println(products.all { it.stock > 0 })
     println(products.none{ it.name == " " })
+
+//Total number of products
+// Total inventory value (price × stock)
+//How many products per category
+    println(products.size)
+    println(products.sumOf { it.stock * it.price })
 }
