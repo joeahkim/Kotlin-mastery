@@ -13,14 +13,31 @@ package CollectionsII.higherOrderFunctions
 //Check if anyone is under 18
 //Check if all users are above 16
 //Check if no one is older than 60
+//fun main(){
+//    val users = listOf(
+//        "Kim" to 25,
+//        "Regina" to 19,
+//        "Derrick" to 31,
+//        "Faith" to 17
+//    )
+//    println(users.any { it.second < 18 })
+//    println(users.all { it.second > 18 })
+//    println(users.any { it.second > 60 })
+//}
+
+//Check if anyone is from Kisumu
+//Check if all users are from Nairobi
+//Check if none are from Eldoret
 fun main(){
     val users = listOf(
-        "Kim" to 25,
-        "Regina" to 19,
-        "Derrick" to 31,
-        "Faith" to 17
+        "Kim" to "Nairobi",
+        "Regina" to "Kisumu",
+        "Derrick" to "Nairobi",
+        "Faith" to "Mombasa",
+        "Brian" to "Nairobi"
     )
-    println(users.any { it.second < 18 })
-    println(users.all { it.second > 18 })
-    println(users.any { it.second > 60 })
+
+    println(users.any { it.second == "Kisumu" })
+    println(users.all { it.second == "Nairobi" })
+    println(users.none { it.second == "Eldoret" })
 }
