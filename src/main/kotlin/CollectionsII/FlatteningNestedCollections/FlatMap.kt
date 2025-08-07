@@ -15,4 +15,19 @@ fun main(){
     )
     println(classScores.flatten())
     println(classScores.flatten().average())
+    val flattenedList = classScores.flatMap { it }
+    for (i in flattenedList){
+        if (i >= 90){
+            println("A")
+        }else if (i >80){
+            println("B")
+        } else if (i > 70){
+            println("C")
+        }else if (i > 60){
+            println("D")
+        }
+        else{
+            println("F")
+        }
+    }
 }
