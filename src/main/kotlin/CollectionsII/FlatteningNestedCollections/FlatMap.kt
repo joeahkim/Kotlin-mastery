@@ -1,6 +1,5 @@
 package CollectionsII.FlatteningNestedCollections
 
-//Use flatten() to get a single list of all scores.
 //Calculate the average score across all classes.
 //Use flatMap() to create a list of grade letters:
 //90+ → "A"
@@ -15,5 +14,5 @@ fun main(){
         listOf(88, 79)
     )
     println(classScores.flatten())
-
+    println(classScores.flatten().average())
 }
