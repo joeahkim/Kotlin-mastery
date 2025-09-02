@@ -25,6 +25,9 @@ class Bird(name: String) : Animal(name){
     override fun makeSound(){
         println("$name says: chirp! chirp!")
     }
+    fun fly(){
+        println("Flew Away")
+    }
 }
 
 fun main() {
@@ -35,4 +38,5 @@ fun main() {
     dog.makeSound()
     cat.makeSound()
     bird.makeSound()
+    bird.fly()
 }
