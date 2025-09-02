@@ -1,7 +1,5 @@
 package ClassesAndObjects
 
-import javax.print.attribute.standard.MediaSize
-
 //Has a brand and waterLevel (in milliliters).
 //Can brewCoffee(size: Int) — deducts the water and prints a message.
 //Can refillWater(amount: Int) — increases water level.
