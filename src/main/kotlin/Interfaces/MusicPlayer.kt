@@ -1,7 +1,5 @@
 package Interfaces
 
-class MusicPlayer {
-}
 interface Playable{
     fun play()
 }
