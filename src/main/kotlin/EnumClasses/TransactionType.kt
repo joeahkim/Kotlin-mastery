@@ -30,5 +30,6 @@ fun main(){
     val transaction = Transaction(50.5)
     transaction.performTransaction(TransactionType.Deposit, 50.5)
     transaction.performTransaction(TransactionType.Withdraw, 30.3)
+    transaction.performTransaction(TransactionType.Withdraw, 160.3)
     transaction.performTransaction(TransactionType.Transfer, 70.5)
 }
