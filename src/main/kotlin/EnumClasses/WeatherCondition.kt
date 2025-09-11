@@ -18,6 +18,15 @@ class WeatherReporter {
             WeatherCondition.SNOWY -> println("❄${condition.description}")
         }
     }
+    fun getSafetyAdvice(condition: WeatherCondition){
+        when(condition){
+            WeatherCondition.RAINY -> println("Carry and umbrella!")
+            WeatherCondition.SUNNY -> println("Go Hiking!")
+            WeatherCondition.STORMY -> println("Stay Indoors!")
+            WeatherCondition.SNOWY -> println("Dress Warmly")
+            WeatherCondition.CLOUDY -> print("Normal Day")
+        }
+    }
 }
 fun main() {
     val reporter = WeatherReporter()
@@ -25,5 +34,7 @@ fun main() {
     reporter.getWeatherAlert(WeatherCondition.SUNNY)
     reporter.getWeatherAlert(WeatherCondition.RAINY)
     reporter.getWeatherAlert(WeatherCondition.STORMY)
+    reporter.getSafetyAdvice(WeatherCondition.SUNNY)
+    reporter.getSafetyAdvice(WeatherCondition.CLOUDY)
 }
 
