@@ -26,14 +26,14 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             AndroidBasicsTheme {
-                myApp()
+                MyApp()
             }
         }
     }
 }
 
 @Composable
-fun myApp(
+fun MyApp(
     modifier: Modifier = Modifier,
     names: List<String> = listOf("World", "Compose")
 ) {
@@ -47,11 +47,13 @@ fun myApp(
 @Composable
 fun Greeting(name: String) {
     val expandable = remember { mutableStateOf(false) }
+    val extraPadding = if (!expandable.value) 48.dp else 0.dp
     Surface (
         color = MaterialTheme.colorScheme.primary,
         modifier = Modifier.padding(vertical = 4.dp).padding(horizontal = 4.dp)
     ){
-        Row(modifier = Modifier.padding(24.dp)) {
+        Row(modifier = Modifier.padding(24.dp)
+            .padding(bottom = extraPadding)) {
             Column(modifier = Modifier.weight(1f)) {
                 Text(text = "Hello ")
                 Text(text = name)
@@ -68,6 +70,6 @@ fun Greeting(name: String) {
 @Composable
 fun GreetingPreview() {
     AndroidBasicsTheme {
-        myApp()
+        MyApp()
     }
 }
